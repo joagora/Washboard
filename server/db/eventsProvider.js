@@ -37,4 +37,12 @@ EventsProvider.prototype.getEvent = function (id) {
   });
   return response;
 }
+
+EventsProvider.prototype.getAllEvents = function () {
+  const response = this.elasticClient.search({
+    index: 'events',
+    type: 'events'
+  });
+  return response;
+}
 module.exports = EventsProvider;

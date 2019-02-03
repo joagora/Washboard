@@ -7,6 +7,7 @@ const eventsRouter = function (provider) {
     provider.addEvent(req.body).then(function (result) {
       res.json(result)
     }).catch((err) => {
+      console.error(err);
       res.status(500);
       res.json({
         status: 500,
@@ -20,6 +21,20 @@ const eventsRouter = function (provider) {
     provider.getEvent(req.params.id).then(function (result) {
       res.json(result)
     }).catch((err) => {
+      console.error(err);
+      res.status(500);
+      res.json({
+        status: 500,
+        error: err
+      });
+    });
+  });
+
+  router.get('/', function (req, res) {
+    provider.getAllEvents().then(function (result) {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err);
       res.status(500);
       res.json({
         status: 500,
