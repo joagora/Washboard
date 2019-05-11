@@ -30,7 +30,7 @@ const eventsRouter = function (provider) {
   });
 
   //Get all events
-  router.get('/', function (res) {
+  router.get('/', function (req, res) {
     provider.getAllEvents().then(function (result) {
       res.json(result)
     }).catch((err) => {
