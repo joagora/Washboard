@@ -40,12 +40,6 @@ elastic.indexExists(eventsProvider.mapping.index)
 })
 .catch(console.error);
 
-
-
-
-
-
-
 app.listen(3000, function() {
   console.log(`server running on port ${ this.address().port }`);
 })

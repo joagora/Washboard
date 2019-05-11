@@ -1,3 +1,4 @@
+
 const Elastic = function(elasticClient) {
   this.elasticClient = elasticClient;
 }
