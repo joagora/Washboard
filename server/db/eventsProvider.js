@@ -27,13 +27,11 @@ EventsProvider.prototype.addEvent = function (event) {
         content: event.content
         // date: event.date,
       }
-      
     }
   });
 }
 
 EventsProvider.prototype.getEvent = function (id) {
-  console.log("getEvent called")
   const response = this.elasticClient.get({
     index: this.mapping.index,
     type: this.mapping.type,
@@ -53,15 +51,11 @@ EventsProvider.prototype.getAllEvents = function () {
 }
 
 EventsProvider.prototype.updateEvent = function (id, event) {
-  console.log(event)
-  console.log('event.properties', event.properties);
-  
   const response = this.elasticClient.update({
     index: this.mapping.index,
     type: this.mapping.type,
     id: id,
     body: {
-
       doc: {
         title: event.body.properties.title,
         content: event.body.properties.content
@@ -75,7 +69,7 @@ EventsProvider.prototype.deleteEventById = function (id) {
   const response = this.elasticClient.delete({
     index: this.mapping.index,
     type: this.mapping.type,
-    id: this.mapping.id
+    id: id
   });
   return response;
 }
