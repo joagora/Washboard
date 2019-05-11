@@ -34,7 +34,6 @@ const eventsRouter = function (provider) {
     provider.getAllEvents().then(function (result) {
       res.json(result)
     }).catch((err) => {
-      console.error(err);
       res.status(500);
       res.json({
         status: 500,
@@ -48,7 +47,7 @@ const eventsRouter = function (provider) {
     provider.updateEvent(req.params.id, req.body).then(function (result) {
       res.json(result)
     }).catch((err) => {
-      res.status(500);
+      res.statusCode();
       res.json({
         status: 500,
         error: err
