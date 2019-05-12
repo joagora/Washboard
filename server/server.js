@@ -10,7 +10,7 @@ const elasticSearch = require('elasticsearch');
 
 const Elastic = require('./db/elastic');
 const EventsProvider = require('./db/eventsProvider.js');
-
+const seedDb = require('./db/seeds');
 
 app.use(express.static(publicPath));
 app.use(parser.json());
@@ -34,12 +34,16 @@ elastic.indexExists(eventsProvider.mapping.index)
     return elastic.initIndex(eventsProvider.mapping.index);
 }).then(function() {
   elastic.initMapping(eventsProvider.mapping)
-}).then(function(elasticClient) {
+}).then(function() {
   const events = eventsRouter(eventsProvider);
   app.use('/api/events', events);
+}).then(function() {
+  seedDb(eventsProvider);
 })
 .catch(console.error);
 
 app.listen(3000, function() {
   console.log(`server running on port ${ this.address().port }`);
 })
+
+

@@ -26,6 +26,7 @@ EventsProvider.prototype.addEvent = function (event) {
         title: event.title,
         content: event.content
         // date: event.date,
+        //TODO: add location and link to tickets
       }
     }
   });
