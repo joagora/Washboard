@@ -11,7 +11,9 @@ const EventsProvider = function (elasticClient) {
         content: {
           type: "text"
         },
-        // date: {type: "date"},
+        date: {
+          type: "date"
+        },
       }
     }
   }
@@ -24,8 +26,8 @@ EventsProvider.prototype.addEvent = function (event) {
     body: {
       properties: {
         title: event.title,
-        content: event.content
-        // date: event.date,
+        content: event.content,
+        date: event.date,
       }
     }
   });
@@ -57,8 +59,11 @@ EventsProvider.prototype.updateEvent = function (id, event) {
     id: id,
     body: {
       doc: {
-        title: event.body.properties.title,
-        content: event.body.properties.content
+        properties: {
+          title: event.body.properties.title,
+          content: event.body.properties.content,
+          date: event.body.properties.date
+        }
       }
     }
   });
