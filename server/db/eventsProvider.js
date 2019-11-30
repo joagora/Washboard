@@ -60,13 +60,14 @@ EventsProvider.prototype.updateEvent = function (id, event) {
     body: {
       doc: {
         properties: {
-          title: event.body.properties.title,
-          content: event.body.properties.content,
-          date: event.body.properties.date
+          title: event.title,
+          content: event.content,
+          date: event.date
         }
       }
     }
   });
+
   return response;
 }
 

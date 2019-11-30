@@ -7,10 +7,9 @@ const eventsRouter = function (provider) {
     provider.addEvent(req.body).then(function (result) {
       res.json(result)
     }).catch((err) => {
-      console.error(err);
-      res.status(500);
+      res.statusCode();
       res.json({
-        status: 500,
+        status: res.statusCode(),
         error: err
       });
     });
@@ -21,9 +20,9 @@ const eventsRouter = function (provider) {
     provider.getEvent(req.params.id).then(function (result) {
       res.json(result)
     }).catch((err) => {
-      res.status(500);
+      res.statusCode();
       res.json({
-        status: 500,
+        status: res.statusCode(),
         error: err
       });
     });
@@ -64,14 +63,13 @@ const eventsRouter = function (provider) {
         });
       }
       res.send({
-        message: "Successfully deleted Event id:" + req.id
+        message: "Successfully deleted Event id:" + req.params.id
       });
       res.json(result);
     }).catch((err) => {
-      console.log(err);
-      res.status(500);
+      res.statusCode();
       res.json({
-        status: 500,
+        status: res.statusCode(),
         error: err
       });
     });
