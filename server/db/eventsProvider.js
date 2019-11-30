@@ -14,8 +14,7 @@ const EventsProvider = function (elasticClient) {
         date: {
           type: "date"
         },
-      },
-      address: {
+        address: {
         properties: {
           country: {
             type: "text"
@@ -31,7 +30,9 @@ const EventsProvider = function (elasticClient) {
           }
         }
       }
-      //TODO: add location and link to tickets
+    },
+      
+      //TODO: add link to tickets
     }
   }
 }

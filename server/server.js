@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const parser = require('body-parser');
-
+const seedDb = require('./db/seeds');
 const router = require('./routes/events');
 const publicPath = path.join(__dirname, 'dist');
 const eventsRouter = require('./routes/events');
