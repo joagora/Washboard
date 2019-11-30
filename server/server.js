@@ -34,9 +34,11 @@ elastic.indexExists(eventsProvider.mapping.index)
     return elastic.initIndex(eventsProvider.mapping.index);
 }).then(function() {
   elastic.initMapping(eventsProvider.mapping)
-}).then(function(elasticClient) {
+}).then(function() {
   const events = eventsRouter(eventsProvider);
   app.use('/api/events', events);
+}).then(function() {
+  seedDb(eventsProvider);
 })
 .catch(console.error);
 

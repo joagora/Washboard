@@ -14,7 +14,24 @@ const EventsProvider = function (elasticClient) {
         date: {
           type: "date"
         },
+      },
+      address: {
+        properties: {
+          country: {
+            type: "text"
+          },
+          city: {
+            type: "text"
+          },
+          street: {
+            type: "text"
+          },
+          venue: {
+            type: "text",
+          }
+        }
       }
+      //TODO: add location and link to tickets
     }
   }
 }
@@ -28,6 +45,14 @@ EventsProvider.prototype.addEvent = function (event) {
         title: event.title,
         content: event.content,
         date: event.date,
+        address: {
+          properties: {
+            country: event.address.country,
+            city: event.address.city,
+            street: event.address.street,
+            venue: event.address.venue
+          }
+        }
       }
     }
   });
@@ -52,7 +77,7 @@ EventsProvider.prototype.getAllEvents = function () {
   return response;
 }
 
-EventsProvider.prototype.updateEvent = function (id, event) {
+EventsProvider.prototype.updateEvent = function (id, event) { 
   const response = this.elasticClient.update({
     index: this.mapping.index,
     type: this.mapping.type,
@@ -62,12 +87,17 @@ EventsProvider.prototype.updateEvent = function (id, event) {
         properties: {
           title: event.title,
           content: event.content,
-          date: event.date
+          date: event.date,
+          address: {
+            country: event.address.country,
+            city: event.address.city,
+            street: event.address.street,
+            venue: event.address.venue
+          }
         }
       }
     }
   });
-
   return response;
 }
 
