@@ -1,3 +1,4 @@
+@import '../../styles/colors.scss';
 $base-padding: 2rem;
 
 nav ul {
@@ -10,6 +11,14 @@ nav ul {
         display: inline-block;
         padding: $base-padding;
         flex-grow: 2;
+        line-height: 2rem;
+
+        a {
+            font-size: 1.3rem;
+        }
     }
+    
 }
+
+
 
