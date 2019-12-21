@@ -1,24 +1,33 @@
 @import '../../styles/colors.scss';
 $base-padding: 2rem;
 
-nav ul {
+#navigation-container {
+    position: absolute;
+    right: 0%;
+    top: 0;
+}
+nav {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    float: right;
-    li {
-        list-style: none;
-        display: inline-block;
-        padding: $base-padding;
-        flex-grow: 2;
-        line-height: 2rem;
+    justify-content: flex-end;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        li {
+            list-style: none;
+            display: inline-block;
+            padding: $base-padding;
+            flex-grow: 2;
+            line-height: 2rem;
 
-        a {
-            font-size: 1.3rem;
+            a {
+                font-size: 1.3rem;
+            }
         }
-    }
+    }  
     
 }
+
 
 
 

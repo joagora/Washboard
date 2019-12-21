@@ -1,0 +1,8 @@
+@import '../../styles/images.scss';
+main {
+    background: url($purpleBackground);
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
