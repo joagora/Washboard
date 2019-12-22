@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./read-more.component.css']
 })
 export class ReadMoreComponent implements OnInit {
-
+  display = true;
   @Output() readMore = new EventEmitter();
   constructor() { }
 
@@ -15,5 +15,6 @@ export class ReadMoreComponent implements OnInit {
 
   onClick() {
     this.readMore.emit(event);
+    this.display = !this.display;
   }
 }
