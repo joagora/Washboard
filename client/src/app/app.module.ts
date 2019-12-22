@@ -8,11 +8,13 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ReadMoreComponent } from './read-more/read-more.component';
 import { AboutDetailsComponent } from './about/about-details/about-details.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'gallery', component: GalleryComponent }
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutComponent,
     ReadMoreComponent,
-    AboutDetailsComponent
+    AboutDetailsComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

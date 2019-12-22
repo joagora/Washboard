@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutDetailsComponent } from './about-details.component';
+import { By } from '@angular/platform-browser';
 
 describe('AboutDetailsComponent', () => {
   let component: AboutDetailsComponent;
@@ -21,5 +22,13 @@ describe('AboutDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+
+  it('should display the about details when display property is set to true', () => {
+    component.display = true;
+    fixture.detectChanges();
+    const mainElement = fixture.debugElement.query(By.css('main')).nativeElement;
+    expect(mainElement).toBeDefined();
   });
 });
