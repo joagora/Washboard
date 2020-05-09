@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-read-more',
@@ -6,15 +6,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./read-more.component.css']
 })
 export class ReadMoreComponent implements OnInit {
-  display = true;
-  @Output() readMore = new EventEmitter();
-  constructor() { }
-
+  @Input() routerLink: string;
   ngOnInit() {
-  }
-
-  onClick() {
-    this.readMore.emit(event);
-    this.display = !this.display;
+    console.log(this.routerLink);
+    
   }
 }
