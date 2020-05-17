@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  config: any;
+  fullpage_api: any;
+  constructor() {
 
+    // for more details on config options please visit fullPage.js docs
+    this.config = {
+      menu: '#menu',
+      anchors: ['page1','page2','page3']
+    };
+  }
   ngOnInit() {
   }
 
+  getRef(fullPageRef) {
+    this.fullpage_api = fullPageRef;
+  }
 }
