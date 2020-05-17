@@ -11,8 +11,28 @@ const EventsProvider = function (elasticClient) {
         content: {
           type: "text"
         },
-        // date: {type: "date"},
+        date: {
+          type: "date"
+        },
+        address: {
+        properties: {
+          country: {
+            type: "text"
+          },
+          city: {
+            type: "text"
+          },
+          street: {
+            type: "text"
+          },
+          venue: {
+            type: "text",
+          }
+        }
       }
+    },
+      
+      //TODO: add link to tickets
     }
   }
 }
@@ -24,8 +44,16 @@ EventsProvider.prototype.addEvent = function (event) {
     body: {
       properties: {
         title: event.title,
-        content: event.content
-        // date: event.date,
+        content: event.content,
+        date: event.date,
+        address: {
+          properties: {
+            country: event.address.country,
+            city: event.address.city,
+            street: event.address.street,
+            venue: event.address.venue
+          }
+        }
       }
     }
   });
@@ -50,15 +78,24 @@ EventsProvider.prototype.getAllEvents = function () {
   return response;
 }
 
-EventsProvider.prototype.updateEvent = function (id, event) {
+EventsProvider.prototype.updateEvent = function (id, event) { 
   const response = this.elasticClient.update({
     index: this.mapping.index,
     type: this.mapping.type,
     id: id,
     body: {
       doc: {
-        title: event.body.properties.title,
-        content: event.body.properties.content
+        properties: {
+          title: event.title,
+          content: event.content,
+          date: event.date,
+          address: {
+            country: event.address.country,
+            city: event.address.city,
+            street: event.address.street,
+            venue: event.address.venue
+          }
+        }
       }
     }
   });
