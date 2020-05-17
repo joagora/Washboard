@@ -9,7 +9,9 @@ import { AboutComponent } from './about/about.component';
 import { ReadMoreComponent } from './read-more/read-more.component';
 import { AboutDetailsComponent } from './about/about-details/about-details.component';
 import { GalleryComponent } from './gallery/gallery.component';
-
+import { AngularFullpageModule } from '@fullpage/angular-fullpage';
+import { TourListComponent } from './tour-list/tour-list.component';
+import { TourItemComponent } from './tour-list/tour-item/tour-item.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -25,11 +27,14 @@ const appRoutes: Routes = [
     AboutComponent,
     ReadMoreComponent,
     AboutDetailsComponent,
-    GalleryComponent
+    GalleryComponent,
+    TourListComponent,
+    TourItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFullpageModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true })
