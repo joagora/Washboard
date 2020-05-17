@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss', '../../styles/global.scss']
 })
 export class AboutComponent implements OnInit {
-  title = "ABOUT";
-  subtitle = "Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki."
+  title: string = 'ABOUT';
+  buttonCaption: string = 'Read more'
+  subtitle: string = 'Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego drukarza do wypełnienia tekstem próbnej książki.'
   readMoreButtonLink: string = '/about';
   ngOnInit() {}
  
