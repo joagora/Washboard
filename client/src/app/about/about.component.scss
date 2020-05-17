@@ -1,0 +1,9 @@
+@import '../../styles/base.scss';
+
+.columns-layout {
+    column-count: 2;
+    
+    p {
+       margin: 0; 
+    }
+}
