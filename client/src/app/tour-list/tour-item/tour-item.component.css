@@ -1,0 +1,10 @@
+
+@import '../../../styles/global.scss';
+
+.flex-spread {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

@@ -7,8 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class ReadMoreComponent implements OnInit {
   @Input() routerLink: string;
+  @Input() buttonCaption: string;
   ngOnInit() {
-    console.log(this.routerLink);
-    
   }
 }

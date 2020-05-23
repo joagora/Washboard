@@ -1,3 +1,12 @@
-<p>
-  tour-item works!
-</p>
+<section class="flex-spread">
+  <p class="tour-date">
+    {{tourItem.date.format("dddd, MMMM Do YYYY")}}
+  </p>
+  <p class="tour-venue">
+    {{tourItem.address.venue}}
+  </p>
+  <p class="tour-address">
+    {{tourItem.address.city}}, {{tourItem.address.country}}
+  </p>
+  <app-external-link-button [ngClass]="{'hidden' : !tourItem.ticketsLink}"  [linkToRedirect]="tourItem.ticketsLink" [buttonCaption]="buttonCaption"></app-external-link-button>
+</section>

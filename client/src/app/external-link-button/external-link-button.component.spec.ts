@@ -1,21 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ExternalLinkButtonComponent } from './external-link-button.component';
 
-import { ReadMoreComponent } from './read-more.component';
-import { By } from '@angular/platform-browser';
-
-describe('ReadMoreComponent', () => {
-  let component: ReadMoreComponent;
-  let fixture: ComponentFixture<ReadMoreComponent>;
+describe('ExternalLinkButtonComponent', () => {
+  let component: ExternalLinkButtonComponent;
+  let fixture: ComponentFixture<ExternalLinkButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadMoreComponent ]
+      declarations: [ ExternalLinkButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReadMoreComponent);
+    fixture = TestBed.createComponent(ExternalLinkButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
