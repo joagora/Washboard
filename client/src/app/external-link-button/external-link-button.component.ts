@@ -5,16 +5,9 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './external-link-button.component.html',
   styleUrls: ['./external-link-button.component.css']
 })
-export class ExternalLinkButtonComponent implements OnInit {
+export class ExternalLinkButtonComponent {
   @Input() linkToRedirect: string;
   @Input() buttonCaption: string;
-  constructor() { 
-  }
-
-  ngOnInit() {
-    console.log(this.linkToRedirect);
-    
-  }
 
   goToTickets() {
     window.location.href = this.linkToRedirect;
