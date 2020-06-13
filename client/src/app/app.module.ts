@@ -17,6 +17,7 @@ import { NewsFeedListComponent } from './newsletter/news-feed-list/news-feed-lis
 import { NewsFeedComponent } from './newsletter/news-feed-list/news-feed/news-feed.component';
 import { NewsFeedService } from './shared/services/news-feed-service';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FontAwesomeModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false })
