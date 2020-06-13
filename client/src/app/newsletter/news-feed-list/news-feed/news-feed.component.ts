@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 import { NewsFeedService } from 'src/app/shared/services/news-feed-service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm'
 @Component({
   selector: 'app-news-feed',
   templateUrl: './news-feed.component.html',
@@ -21,6 +22,8 @@ export class NewsFeedComponent implements OnInit {
   }
 
   getFeed() {
+    
+    
     this.newsFeedService.getFeedDetails(this.instagramPost.link).subscribe(data => {
       this.postMarkup = this.domSanitizer.bypassSecurityTrustHtml(data.html);
       window['instgrm'].Embeds.process()

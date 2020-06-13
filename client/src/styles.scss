@@ -2,6 +2,8 @@
 @import './styles/colors.scss';
 @import './styles/images.scss';
 @import './styles/base.scss';
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 body {
     margin: 0;
     padding: 0;
@@ -42,3 +44,4 @@ a  {
 .text {
     line-height: $textLineHeight;
 }
+
