@@ -12,6 +12,11 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { TourListComponent } from './tour-list/tour-list.component';
 import { TourItemComponent } from './tour-list/tour-item/tour-item.component';
 import { ExternalLinkButtonComponent } from './external-link-button/external-link-button.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { NewsFeedListComponent } from './newsletter/news-feed-list/news-feed-list.component';
+import { NewsFeedComponent } from './newsletter/news-feed-list/news-feed/news-feed.component';
+import { NewsFeedService } from './shared/services/news-feed-service';
+import { HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -30,16 +35,22 @@ const appRoutes: Routes = [
     GalleryComponent,
     TourListComponent,
     TourItemComponent,
-    ExternalLinkButtonComponent
+    ExternalLinkButtonComponent,
+    NewsletterComponent,
+    NewsFeedListComponent,
+    NewsFeedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true })
+      { enableTracing: false })
   ],
-  providers: [],
+  providers: [
+    NewsFeedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,20 @@
+<main>
+  <div class="glide" id="newsletter-glider">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        <ng-container *ngFor="let instagramPost of instagramPosts" >
+            <app-news-feed  class="glide__slide" [instagramPost]="instagramPost"></app-news-feed>  
+        </ng-container>
+      </ul>
+  
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+    </div>
+    <div data-glide-el="controls[nav]" *ngFor="let item of instagramPosts; let i = index">
+      <button data-glide-dir="=i"></button>
+    </div>
+  </div>
+  
+</main>
