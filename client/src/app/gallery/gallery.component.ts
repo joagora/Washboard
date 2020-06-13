@@ -18,16 +18,17 @@ export class GalleryComponent implements AfterViewInit {
   ngAfterViewInit(){
     this.muteSound(true);
     this.playSound(true);
+    this.addWatcherForMouseMovement()
+  }
+
+  addWatcherForMouseMovement() {
     this.videoPlayer.nativeElement.addEventListener('mousemove', () => {
-      console.log('yo');
-      
       this.videoControls.nativeElement.classList.remove('fade-out');
       this.videoControls.nativeElement.classList.remove('hidden')
       void this.videoControls.nativeElement.offsetWidth;
       this.videoControls.nativeElement.classList.add('fade-out');
     })
   }
-
   muteSound(shouldMute: boolean) {
     this.videoPlayer.nativeElement.muted = shouldMute;
     this.videoMuted = shouldMute;
@@ -46,11 +47,5 @@ export class GalleryComponent implements AfterViewInit {
   playSound(shouldPlay) {
     shouldPlay ? this.videoPlayer.nativeElement.play() : this.videoPlayer.nativeElement.pause();
     this.isPlaying = shouldPlay;
-  }
-
-
-  onVideoHover() {
-    console.log('hovered');
-    
   }
 }
