@@ -1,5 +1,23 @@
 @import '../../styles/images.scss';
 @import '../../styles/global.scss';
+
 main {
     background: url($purpleBackground);
+}
+
+.parallax-container {
+    margin-bottom: 5rem;
+}
+.home-container {
+    position: fixed;
+    z-index: -1;
+    bottom: 0px; 
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.page-container {
+    position: relative;
 }

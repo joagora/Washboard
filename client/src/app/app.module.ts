@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,8 +19,10 @@ import { NewsFeedComponent } from './newsletter/news-feed-list/news-feed/news-fe
 import { NewsFeedService } from './shared/services/news-feed-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ParallaxDirective } from './animations/parallax-directive';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: LandingPageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'about', component: AboutDetailsComponent },
   { path: 'gallery', component: GalleryComponent }
@@ -39,10 +42,13 @@ const appRoutes: Routes = [
     ExternalLinkButtonComponent,
     NewsletterComponent,
     NewsFeedListComponent,
-    NewsFeedComponent
+    NewsFeedComponent,
+    ParallaxDirective,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
