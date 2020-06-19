@@ -18,16 +18,15 @@
 #video-controls {
     position: absolute;
     bottom: 7%;
-    width: 15%;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    left: 50%;
-    margin-left: -50px;
     .video-icon {
+        align-self: center;
         cursor: pointer;
         color: white;
         opacity: 0.8;
+        padding: 2rem;
     }
     .video-icon:hover {
         opacity: 1;
@@ -47,6 +46,10 @@
     visibility: hidden;
 }
 
+#gallery-button {
+    align-self: center;
+    border: 5px solid white;
+}
 @keyframes fade-out {
 
     0% {
