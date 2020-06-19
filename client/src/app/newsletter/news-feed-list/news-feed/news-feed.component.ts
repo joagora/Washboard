@@ -18,13 +18,15 @@ export class NewsFeedComponent implements OnInit {
   constructor(private newsFeedService: NewsFeedService, private domSanitizer: DomSanitizer) {}
 
   ngOnInit() {
+    console.log('oninit');
+    
     this.getFeed();
   }
 
   getFeed() {
-    
-    
     this.newsFeedService.getFeedDetails(this.instagramPost.link).subscribe(data => {
+      console.log('gets data');
+      
       this.postMarkup = this.domSanitizer.bypassSecurityTrustHtml(data.html);
       window['instgrm'].Embeds.process()
     })
