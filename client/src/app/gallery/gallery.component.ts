@@ -13,6 +13,7 @@ export class GalleryComponent implements AfterViewInit {
   videoMuted = true;
   isPlaying = true;
   isVisible = false;
+  buttonCaption: string = 'Read more';
   @ViewChild('videoplayer') videoPlayer: ElementRef;
   @ViewChild('videoControls') videoControls: ElementRef;
   ngAfterViewInit(){

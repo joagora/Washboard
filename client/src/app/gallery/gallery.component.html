@@ -6,6 +6,9 @@
   <div id="video-controls" class="controls hidden" #videoControls>
     <fa-icon [icon]="playIcon" class="video-icon" size="3x" (click)="togglePlay()"></fa-icon>
     <fa-icon [icon]="soundIcon" class="video-icon" size="3x" (click)="toggleSound()"></fa-icon>
+    <button id="gallery-button" class="main-button secondary-button">
+      <a class="secondary-link" routerLink="[routerLink]" routerLinkActive="active">{{buttonCaption}}</a>
+    </button>
  </div>
 </div>
 

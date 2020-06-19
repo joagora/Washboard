@@ -7,7 +7,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ReadMoreComponent } from './read-more/read-more.component';
 import { AboutDetailsComponent } from './about/about-details/about-details.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TourListComponent } from './tour-list/tour-list.component';
@@ -34,7 +33,6 @@ const appRoutes: Routes = [
     NavigationComponent,
     HomeComponent,
     AboutComponent,
-    ReadMoreComponent,
     AboutDetailsComponent,
     GalleryComponent,
     TourListComponent,
