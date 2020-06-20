@@ -2,13 +2,21 @@
 @import '../../styles/fonts.scss';
 $base-padding: 2rem;
 
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+    .blurred-nav-bar {
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
 #navigation-container {
     position: fixed;
     right: 0%;
     top: 0;
-    background-color: white;
     width: 100%;
+    background-color: #ffffffB3;
 }
+
 nav {
     display: flex;
     justify-content: flex-end;
