@@ -1,0 +1,22 @@
+@import '../../../styles/global.scss';
+
+.slider-controls {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .child-control {
+        color: white;
+        padding: 2rem;
+        cursor: pointer;
+        opacity: .8;
+    }
+    .child-control:hover {
+        opacity: 1;
+    }
+}
+
+.slider {
+    padding: 4rem;
+}

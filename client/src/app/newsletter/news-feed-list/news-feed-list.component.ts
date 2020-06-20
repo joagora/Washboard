@@ -4,14 +4,17 @@ import {
   AfterViewInit
 } from '@angular/core';
 import Glide, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm'
+import { faChevronCircleRight, faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-news-feed-list',
   templateUrl: './news-feed-list.component.html',
-  styleUrls: ['./news-feed-list.component.css']
+  styleUrls: ['./news-feed-list.component.scss']
 })
 export class NewsFeedListComponent implements OnInit, AfterViewInit {
   instagramPosts: any;
-  glide
+  glide: Glide;
+  nextIcon = faChevronCircleRight;
+  previousIcon = faChevronCircleLeft;
   constructor() {
     
   }
@@ -356,11 +359,18 @@ export class NewsFeedListComponent implements OnInit, AfterViewInit {
           bound: true,
           animationDuration: 1100,
           rewind: true,
-          animationTimingFunc: 'ease-in-out'
+          animationTimingFunc: 'ease-in-out',
+          gap: 30,
+          breakpoints: {
+            800: { perView: 1 },
+            1100: { perView: 2 },
+            1200: { perView: 3 }
+          }
         }
       )
   }
   ngAfterViewInit(){
-    this.glide.mount({ Controls, Breakpoints })
+    this.glide.mount({ Controls, Breakpoints });
+
   }
 }
