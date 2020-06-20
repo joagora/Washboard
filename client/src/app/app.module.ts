@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -6,7 +7,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ReadMoreComponent } from './read-more/read-more.component';
 import { AboutDetailsComponent } from './about/about-details/about-details.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TourListComponent } from './tour-list/tour-list.component';
@@ -18,8 +18,10 @@ import { NewsFeedComponent } from './newsletter/news-feed-list/news-feed/news-fe
 import { NewsFeedService } from './shared/services/news-feed-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ParallaxDirective } from './animations/parallax-directive';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: LandingPageComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'about', component: AboutDetailsComponent },
   { path: 'gallery', component: GalleryComponent }
@@ -31,7 +33,6 @@ const appRoutes: Routes = [
     NavigationComponent,
     HomeComponent,
     AboutComponent,
-    ReadMoreComponent,
     AboutDetailsComponent,
     GalleryComponent,
     TourListComponent,
@@ -39,10 +40,13 @@ const appRoutes: Routes = [
     ExternalLinkButtonComponent,
     NewsletterComponent,
     NewsFeedListComponent,
-    NewsFeedComponent
+    NewsFeedComponent,
+    ParallaxDirective,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
