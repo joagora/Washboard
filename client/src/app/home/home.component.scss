@@ -7,6 +7,8 @@ main {
 
 .home-container {
     position: fixed;
+    left: 50%;
+    transform: translate(-50%, 7%);
     z-index: -1;
     bottom: 0px; 
     right: 0px;

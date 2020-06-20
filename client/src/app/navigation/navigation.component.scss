@@ -1,10 +1,13 @@
 @import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
 $base-padding: 2rem;
 
 #navigation-container {
-    position: absolute;
+    position: fixed;
     right: 0%;
     top: 0;
+    background-color: white;
+    width: 100%;
 }
 nav {
     display: flex;
@@ -16,12 +19,12 @@ nav {
         li {
             list-style: none;
             display: inline-block;
-            padding: $base-padding;
+            padding: 0 $base-padding;
             flex-grow: 2;
             line-height: 2rem;
-
             a {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
+                font-family: $toned-down-font
             }
         }
     }  

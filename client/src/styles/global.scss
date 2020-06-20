@@ -1,7 +1,7 @@
 @import './colors.scss';
 @import './images.scss';
 @import './base.scss';
-
+@import './fonts.scss';
 .full-screen-plate {
     height: 100vh;
     background-repeat: no-repeat;
@@ -22,10 +22,11 @@ a  {
 }
 
 .primary-link {
-    color: $primary-link;
+    color: $black;
 }
+
 .secondary-link {
-    color: $secondary-link;
+    color: $dark-grey;
 }
 
 .text-container {
@@ -47,9 +48,11 @@ a  {
     border-radius: 24px;
     height: 4rem
 }
+
 .primary-button{
     color: black;
 }
+
 .secondary-button {
     border: 1px solid white;
     background-color: white;
