@@ -1,16 +1,16 @@
 @import '../../styles/images.scss';
 @import '../../styles/global.scss';
 
-main {
-    background: url($purpleBackground);
-}
-
 .home-container {
+    background: url($purpleBackground); 
     position: fixed;
+    left: 50%;
+    transform: translate(-50%, 7%);
     z-index: -1;
     bottom: 0px; 
     right: 0px;
     width: 100%;
     height: 100%;
     background-size: cover;
+    background-repeat: no-repeat;
 }
