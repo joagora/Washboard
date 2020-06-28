@@ -18,7 +18,7 @@ import { NewsFeedComponent } from './newsletter/news-feed-list/news-feed/news-fe
 import { NewsFeedService } from './shared/services/news-feed-service';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ParallaxDirective } from './animations/parallax-directive';
+import { ParallaxDirective } from './animations/parallax.directive';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 const appRoutes: Routes = [
   { path: 'home', component: LandingPageComponent },

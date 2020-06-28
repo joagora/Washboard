@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TourItem } from './shared/tour-item';
-import moment from 'moment';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-tour-list',

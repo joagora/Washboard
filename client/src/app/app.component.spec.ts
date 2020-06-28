@@ -2,7 +2,6 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AboutDetailsComponent } from './about/about-details/about-details.component';
-import { ReadMoreComponent } from './read-more/read-more.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -13,7 +12,7 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent, AboutDetailsComponent, AboutDetailsComponent, ReadMoreComponent, GalleryComponent, NavigationComponent
+        AppComponent, AboutDetailsComponent, AboutDetailsComponent, GalleryComponent, NavigationComponent
       ],
     }).compileComponents();
   }));

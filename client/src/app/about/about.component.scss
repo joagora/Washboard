@@ -1,9 +1,39 @@
 @import '../../styles/base.scss';
 @import '../../styles/global.scss';
+@import '../../styles/images.scss';
+@import '../../styles/fonts.scss';
 .columns-layout {
     column-count: 2;
-    
-    p {
-       margin: 0; 
+}
+
+#about-header {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    h1 {
+        font-size: 4.2rem;
+        font: $toned-down-font;
+        text-align: center;
+        align-items: center;
     }
+}
+
+.fixed-background {
+    background-attachment: fixed !important; 
+}
+
+.scroll-background {
+    background-attachment: scroll !important;
+}
+
+#about-intro-photo {
+    height: 170vh;
+    z-index: 1;
+    background: url($beachWashboardBackAndWhite); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 40%;
+    transform: translateY(-20%);
 }

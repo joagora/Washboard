@@ -3,7 +3,7 @@
 @import './base.scss';
 @import './fonts.scss';
 .full-screen-plate {
-    height: 100vh;
+    height: 97vh;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -30,7 +30,7 @@ a  {
 }
 
 .text-container {
-    width: 80%;
+    width: 70%;
 }
 
 .center {
@@ -38,6 +38,7 @@ a  {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .main-button {
